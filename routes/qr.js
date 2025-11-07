@@ -1,5 +1,5 @@
 const { 
-    giftedId,
+    goodchildId,
     removeFile
 } = require('../gift');
 const QRCode = require('qrcode');
@@ -10,7 +10,7 @@ const fs = require('fs');
 let router = express.Router();
 const pino = require("pino");
 const {
-    default: giftedConnect,
+    default: goodchildConnect,
     useMultiFileAuthState,
     Browsers,
     delay,
@@ -21,7 +21,7 @@ const sessionDir = path.join(__dirname, "session");
 
 
 router.get('/', async (req, res) => {
-    const id = giftedId();
+    const id = goodchildId();
     let responseSent = false;
     let sessionCleanedUp = false;
 
@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
         }
     }
 
-    async function GIFTED_QR_CODE() {
+    async function GOODCHILD_QR_CODE() {
         const { version } = await fetchLatestBaileysVersion();
         console.log(version);
         const { state, saveCreds } = await useMultiFileAuthState(path.join(sessionDir, id));
@@ -232,17 +232,17 @@ router.get('/', async (req, res) => {
                         let b64data = compressedData.toString('base64');
 
                             const Sess = await Gifted.sendMessage(Gifted.user.id, { 
-                            text: 'Gifted~' + b64data
+                            text: 'Goodchild~' + b64data
                         });
 
-                        let GIFTED_TEXT = `
+                        let GOODCHILD_TEXT = `
 *✅sᴇssɪᴏɴ ɪᴅ ɢᴇɴᴇʀᴀᴛᴇᴅ✅*
 
 ╔═════◇
 ║ 『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
 ║❒ 𝐓𝐮𝐭𝐨𝐫𝐢𝐚𝐥: _youtube.com/@giftedtechnexus_
 ║❒ 𝐎𝐰𝐧𝐞𝐫: _https://wa.me/255792375563_
-║❒ 𝐑𝐞𝐩𝐨: _https://github.com/Goodchild63/Goodchild-xmd_
+║❒ 𝐑𝐞𝐩𝐨: _https://github.com/Goodchild63/GOODCHILD-XMD_
 ║❒ 𝐖𝐚Group: https://chat.whatsapp.com/BtSKokkIC6VA2nYv71qdoQ?mode=wwt_
 ║ 💜💜💜
 ╚══════════════╝ 
@@ -252,9 +252,9 @@ Use the Quoted Session ID to Deploy your Bot.
 
                         const goodchildMess = {
                             image: { url: 'https://files.catbox.moe/cf2hym.jpg' },
-                            caption: GIFTED_TEXT,
+                            caption: GOODCHILD_TEXT,
                             contextInfo: {
-                                mentionedJid: [Gifted.user.id],
+                                mentionedJid: [Goodchild.user.id],
                                 forwardingScore: 5,
                                 isForwarded: true,
                                 forwardedNewsletterMessageInfo: {
@@ -264,14 +264,14 @@ Use the Quoted Session ID to Deploy your Bot.
                                 }
                             }
                         };
-                        await Gifted.sendMessage(Gifted.user.id, giftedMess, { quoted: Sess });
+                        await Goodchild.sendMessage(Goodchildd.user.id, giftedMess, { quoted: Sess });
 
-                        const giftedAud = {
+                        const goodchildAud = {
                             audio: { url: 'https://files.giftedtech.web.id/audio/Tm7502728882089773829.mp3' },
                             mimetype: 'audio/mpeg',
                             ptt: true,
                             contextInfo: {
-                                mentionedJid: [Gifted.user.id],
+                                mentionedJid: [Goodchild.user.id],
                                 forwardingScore: 5,
                                 isForwarded: true,
                                 forwardedNewsletterMessageInfo: {
@@ -281,7 +281,7 @@ Use the Quoted Session ID to Deploy your Bot.
                                 }
                             }
                         };
-                        await Gifted.sendMessage(Goodchild.user.id, giftedAud, { quoted: Sess });
+                        await Goodchild.sendMessage(Goodchild.user.id, goodchildAud, { quoted: Sess });
 
                         await delay(2000);
                         await Goodchildd.ws.close();

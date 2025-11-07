@@ -154,7 +154,7 @@ router.get('/', async (req, res) => {
 ║ 『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
 ║❒ 𝐓𝐮𝐭𝐨𝐫𝐢𝐚𝐥: _youtube.com/@giftedtechnexus_
 ║❒ 𝐎𝐰𝐧𝐞𝐫: _https://wa.me/255792375563_
-║❒ 𝐑𝐞𝐩𝐨: _https://github.com/Goodchild63/goodchild-xmd_
+║❒ 𝐑𝐞𝐩𝐨: _https://github.com/Goodchild63/GOODCHILD-XMD_
 ║❒ 𝐖𝐚Group: _https://chat.whatsapp.com/BtSKokkIC6VA2nYv71qdoQ?mode=wwt_
 ║ 💜💜💜
 ╚══════════════╝ 
